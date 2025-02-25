@@ -1,0 +1,15 @@
+<form class="search_container" id="search_container">
+	<strong>Como podemos ajudar?</strong>
+	<fieldset>
+		<input type="search" name="search" placeholder=" " required autocomplete="off" pattern="[^'\x22]+" id="search">
+		<label for="search">Pesquise um tópico</label>
+		<button type="submit" title="Pesquisar" name="submit" class="magic-hover"></button>
+	</fieldset>
+	<footer>
+		<button type="button" class="magic-hover" onclick="searchSuggestion(this.value)" value="Como vender com Vega">Como vender com Vega</button>
+		<button type="button" class="magic-hover" onclick="searchSuggestion(this.value)" value="Taxas">Taxas</button>
+		<button type="button" class="magic-hover" onclick="searchSuggestion(this.value)" value="Gateways">Gateways</button>
+		<button type="button" class="magic-hover" onclick="searchSuggestion(this.value)" value="Domínio">Domínio</button>
+		<button type="button" class="magic-hover" onclick="searchSuggestion(this.value)" value="Teste A/B">Teste A/B</button>
+	</footer>
+</form>

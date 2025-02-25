@@ -1,0 +1,6 @@
+<nav class="categories_menu">
+  <a href="{{ site.url }}{{ site.baseurl }}" class="home magic-hover" title="Início"></a>
+  {% for category in site.categories %}
+    <a href="{{ site.url }}{{ site.baseurl }}/assunto/{{ category | first }}" class="category_bt {{ category | first }} magic-hover" title="{{ category | first }}">{{ category | first }}<i></i></a>
+  {% endfor %}
+</nav>

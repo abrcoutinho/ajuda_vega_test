@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+<div class="post_container">
+	{% include search.html %}
+
+	<header class="post_share">
+		<div>
+			<a href="{{ site.url }}{{ site.baseurl }}" class="home magic-hover" title="Início"></a>
+			<a href="{{ site.url }}{{ site.baseurl }}/assunto/{{ page.category }}" class="back magic-hover" title="Voltar"><i></i>Voltar</a>
+		</div>
+		<form>
+			<input type="text" value="{{ site.url }}{{ site.baseurl }}{{ page.url }}" id="inputURL">
+			<button type="button" class="magic-hover" id="copy_post_url" title="Copiar link" onclick="copyURL()" onmouseleave="outTooltip()">
+				<i></i>
+				<span class="tooltip" id="tooltip_clipboard">Copiar URL</span>
+			</button>
+		</form>
+
+		<div class="reading_progress_bar"></div>
+	</header>
+
+	<figure></figure>
+
+	<article>
+		<header>
+			<a href="{{ site.url }}{{ site.baseurl }}/assunto/{{ page.category }}" class="category magic-hover {{ page.category }}">{{ page.category }}<i></i></a>
+
+			<a href="https://hits.sh/{{ site.url }}{{ site.baseurl }}/assunto/{{ page.category }}"><img alt="Hits" src="https://hits.sh/{{ site.url }}{{ site.baseurl }}/assunto/{{ page.category }}.svg?label=Visualiza%C3%A7%C3%B5es&color=FFCC65&labelColor=585858"/></a>
+		</header>
+
+		<h1>{{ page.title }}</h1>
+
+		<div class="date">
+			{%- assign date_format = site.minima.date_format | default: '%-d %b %Y' -%}
+			<time>{{ page.date | date: date_format }}</time>
+
+			<address>por <a href="{{ site.url }}" target="_blank" class="magic-hover" title="Vega Checkout">Vega Checkout</a></address>
+		</div>
+
+		{{ content }}
+
+	</article>
+
+</div>
+

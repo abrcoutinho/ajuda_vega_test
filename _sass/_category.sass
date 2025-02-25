@@ -1,0 +1,323 @@
+.category_container
+	max-width: $main_column
+	margin: 0 auto
+
+	.search_container
+		align-items: center
+		padding: 5rem 0
+
+	.categories_menu
+		display: flex
+		align-items: center
+		gap: .75rem
+		margin: 0 6rem
+		padding-bottom: .5rem
+		border-bottom: solid 1px var(--opacity_10)
+		position: sticky
+		top: 6rem
+		background-color: rgba(#2c2c2c, 90%)
+		z-index: 4
+
+		a
+			box-sizing: border-box
+			border: solid 1px var(--neutral_80)
+			border-radius: 1rem
+
+		.home
+			flex: 0 0 2.5rem
+			height: 2.5rem
+			background: url("../img/icons/home.svg") no-repeat 50% 50%
+
+			&:hover
+				background-color: var(--neutral_80)
+
+		.category_bt
+			flex: 1 0 auto
+			height: 3.5rem
+			display: flex
+			align-items: center
+			justify-content: space-between
+			padding: 0 .75rem 0 1.5rem
+			color: var(--neutral_10)
+			text-transform: capitalize
+			border: solid 1px var(--neutral_80)
+			border-radius: 1rem
+			transition: border-color .2s
+
+			i
+				display: block
+				width: 1.75rem
+				height: 1.75rem
+				background-color: var(--neutral_80)
+				transition: background-color .6s $ease
+				mask:
+					image: url("../img/icons/shine.svg")
+					size: contain
+					repeat: no-repeat
+
+			&.conta
+				order: 1
+				i
+					mask-image: url("../img/icons/abs1.svg")
+			&.produtos
+				order: 2
+				i
+					mask-image: url("../img/icons/abs2.svg")
+			&.financeiro
+				order: 3
+				i
+					mask-image: url("../img/icons/abs3.svg")
+			&.compliance
+				order: 4
+				i
+					mask-image: url("../img/icons/abs4.svg")
+
+			&:hover
+				border-color: rgba(white, 50%)
+				i
+					background-color: var(--neutral_10)
+
+			&.active
+				background-color: var(--neutral_80)
+				position: relative
+				border-color: transparent
+				i
+					background-color: var(--brand)
+				&::after
+					content: ''
+					width: 3rem
+					height: .313rem
+					background-color: var(--brand)
+					border-radius: .313rem
+					position: absolute
+					bottom: -.16rem
+					left: 50%
+					transform: translateX(-50%)
+
+	h1
+		display: none
+
+	ul
+		padding: 0 6rem
+		margin: 2.5rem 0
+		display: grid
+		gap: .75rem
+		grid-template-columns: repeat(4, 1fr)
+		grid-template-rows: 22rem 13.25rem repeat(auto-fit, 6rem)
+
+	li
+		border-radius: 1.25rem
+		box-sizing: border-box
+		min-height: 6rem
+		font-size: 1.25rem
+		line-height: 1.5rem
+		position: relative
+		overflow: hidden
+		background:
+			size: cover
+			repeat: no-repeat
+			position: center
+
+		&::before
+			content: ''
+			width: 100%
+			height: 100%
+			background-color: rgba(#2c2c2c, 60%)
+			position: absolute
+			top: 0
+			left: 0
+			z-index: 1
+
+		&:nth-child(odd)
+			grid-column: 1 / span 2
+
+		&:nth-child(even)
+			grid-column: 3 / span 2
+
+		&:first-child
+			grid-column: 1 / span 4
+			grid-row: 1 / 2
+			align-self: stretch
+			margin-bottom: 2rem
+			font-size: 2.75rem
+			line-height: 3rem
+			background-color: var(--neutral_80)
+
+		&:nth-child(2)
+			grid-column: 1 / span 2
+			grid-row: 2 / 3
+			margin-bottom: 2rem
+			font-size: 1.5rem
+			line-height: 2rem
+			background-color: var(--neutral_80)
+
+		&:nth-child(3)
+			grid-column: 3 / 4
+			grid-row: 2 / 3
+			margin-bottom: 2rem
+			font-size: 1.5rem
+			line-height: 2rem
+			background-color: var(--neutral_80)
+
+		&:nth-child(4)
+			grid-column: 4 / 5
+			grid-row: 2 / 3
+			margin-bottom: 2rem
+			font-size: 1.5rem
+			line-height: 2rem
+			background-color: var(--neutral_80)
+
+		&:nth-child(n+5)
+			border: solid 1px var(--neutral_80)
+
+		h3
+			position: relative
+			z-index: 2
+		a
+			display: inline-block
+			max-width: 90%
+			box-sizing: border-box
+			color: var(--neutral_10)
+			font-weight: 500
+			background-color: rgba(#2C2C2C, 75%)
+			padding: 1.25rem
+
+			&:hover
+				color: #ffdb93
+
+
+		i
+			display: block
+			width: 2rem
+			height: 2rem
+			background-color: var(--neutral_10)
+			opacity: .4
+			position: absolute
+			bottom: 1.25rem
+			right: 1.25rem
+			z-index: 2
+			mask:
+				size: contain
+				repeat: no-repeat
+
+	&.conta
+		& > ul li
+			&:first-child
+				background-image: url("../img/posts/abs1.jpg")
+			&:nth-child(2)
+				background-image: url("../img/posts/abs4.jpg")
+			&:nth-child(3)
+				background-image: url("../img/posts/abs2.jpg")
+			&:nth-child(4)
+				background-image: url("../img/posts/abs5.jpg")
+			i
+				mask-image: url("../img/icons/abs1.svg")
+	&.produtos
+		& > ul li
+			&:first-child
+				background-image: url("../img/posts/abs7.jpg")
+			&:nth-child(2)
+				background-image: url("../img/posts/abs14.jpg")
+			&:nth-child(3)
+				background-image: url("../img/posts/abs15.jpg")
+			&:nth-child(4)
+				background-image: url("../img/posts/abs13.jpg")
+			i
+				mask-image: url("../img/icons/abs2.svg")
+	&.financeiro
+		& > ul li
+			&:first-child
+				background-image: url("../img/posts/abs18.jpg")
+			&:nth-child(2)
+				background-image: url("../img/posts/abs16.jpg")
+			&:nth-child(3)
+				background-image: url("../img/posts/abs12.jpg")
+			&:nth-child(4)
+				background-image: url("../img/posts/abs5.jpg")
+			i
+				mask-image: url("../img/icons/abs3.svg")
+	&.compliance
+		& > ul li
+			&:first-child
+				background-image: url("../img/posts/abs17.jpg")
+			&:nth-child(2)
+				background-image: url("../img/posts/abs3.jpg")
+			&:nth-child(3)
+				background-image: url("../img/posts/abs11.jpg")
+			&:nth-child(4)
+				background-image: url("../img/posts/abs5.jpg")
+			i
+				mask-image: url("../img/icons/abs4.svg")
+
+
+
+@include for-size(tablet_lg)
+	.category_container
+		.categories_menu
+			margin: 0 2rem
+			top: 5rem
+
+		ul
+			padding: 0 2rem
+			grid-template-rows: 22rem repeat(3, 13.25rem) repeat(auto-fit, 6rem)
+		li
+			&:nth-child(2),
+			&:nth-child(3),
+			&:nth-child(4)
+				grid-column: 1 / span 4
+				font-size: 2rem
+				line-height: 2.5rem
+			&:nth-child(2)
+				grid-row: 2 / 3
+			&:nth-child(3)
+				grid-row: 3 / 4
+			&:nth-child(4)
+				grid-row: 4 / 5
+
+
+@include for-size(tablet_md)
+	.category_container
+		.categories_menu
+			gap: .5rem
+			.category_bt
+				height: 2.5rem
+				padding: 0 .5rem 0 .75rem
+				gap: 2rem
+
+
+@include for-size(phone)
+	.category_container
+		.categories_menu
+			margin: 0 1rem
+			overflow-x: auto
+			padding-bottom: .1rem
+
+			.category_bt
+				min-width: 9rem
+		ul
+			padding: 0 1rem
+
+		li
+			font-size: 1rem
+			line-height: 1.25rem
+			min-height: 4rem
+
+			&:nth-child(odd),
+			&:nth-child(even)
+				grid-column: 1 / span 4
+
+			&:first-child
+				font-size: 2rem
+				line-height: 2.5rem
+				margin-bottom: 1rem
+
+			&:nth-child(2),
+			&:nth-child(3),
+			&:nth-child(4)
+				font-size: 1.5rem
+				line-height: 2rem
+				margin-bottom: 1rem
+
+
+
+

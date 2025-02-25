@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<div class="category_container">
+  {% include search.html %}
+  {% include categories_menu.html %}
+
+  {%- if page.title -%}
+    <h1>{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+    <!-- <h2>{{ page.list_title | default: "Posts" }}</h2> -->
+    <ul>
+      {%- assign page_category = page.categories | first -%}
+      {%- for post in site.posts reversed -%}
+        {%- if post.categories contains page_category -%}
+        <li>
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <!-- <span>{{ post.date | date: date_format }}</span> -->
+          <h3><a class="magic-hover" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a></h3>
+          <i></i>
+          {%- if site.show_excerpts -%}
+            {{ post.excerpt }}
+          {%- endif -%}
+        </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+
+  {%- endif -%}
+
+</div>

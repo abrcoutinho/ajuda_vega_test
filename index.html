@@ -1,0 +1,144 @@
+---
+layout: default
+title: "Central de Ajuda - Vega Checkout"
+---
+
+<div class="home">
+	<div class="hero" id="hero">
+		{% include search.html %}
+		<aside>
+			<video poster="img/video_intro_thumb.jpg" controls>
+				<source src="img/vega_central_de_ajuda.webm" type="video/webm">
+				Seu navegador não pode carregar este vídeo.
+			</video>
+		</aside>
+	</div>
+	
+ 	<div class="assuntos">
+		<aside>
+			<div>
+				<h2>Ajuda por assunto</h2>
+				<p>Tudo o que você precisa para incentivar a sua jornada no e-commerce</p>
+				<i></i>
+			</div>
+		</aside>
+
+		<div class="cards_content">
+			{% for category in site.categories %}
+			<article class="card {{ category | first }}">
+				<header>
+					<h3 name="{{ category | first }}"><a href="{{ site.url }}{{ site.baseurl }}/assunto/{{ category | first }}" title="{{ category | first }}" class="magic-hover">{{ category | first }}<i></i></a></h3>
+				</header>
+				<ul>
+					{% for post in category.last reversed %}
+					<li><a href="{{ post.url }}" title="{{ post.title }}" class="magic-hover">
+						<i></i><h4>{{ post.title }}</h4><i></i>
+					</a></li>
+					{% endfor %}
+				</ul>
+			</article>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="duvidas">
+		<h2>Dúvidas frequentes</h2>
+		<article class="active">
+			<header class="magic-hover" onclick="duvidas(event)">
+				<i></i><h3>A quem se destina o Vega?</h3><i></i>
+			</header>
+			<footer><p>
+				Vega é uma página de checkout que permite seu cliente comprar seus produtos na internet. Use o Vega para vender produtos <b>físicos</b>, <b>digitais</b> ou <b>dropshipping</b>. Temos variante de produto, controle de estoque, opções de frete, acompanhamento das vendas em tempo real, relatórios, teste A/B e mais uma série de recursos para otimizar sua conversão. <a href="" title="Comece grátis no Vega" class="magic-hover">Comece grátis</a>
+			</p></footer>
+		</article>
+		<article>
+			<header class="magic-hover" onclick="duvidas(event)">
+				<i></i><h3>Preciso ter e-commerce para vender com o Vega?</h3><i></i>
+			</header>
+			<footer><p>
+				<b>Não</b>. Crie carrinhos de compra pré montados com seus produtos e compartilhe nas redes ou encaminhe para seus clientes. O checkout Vega é personalizável com a cara do seu negócio e <b>funciona para quem não tem loja virtual</b>.
+			</p></footer>
+		</article>
+		<article>
+			<header class="magic-hover" onclick="duvidas(event)">
+				<i></i><h3>Vega é gateway de pagamento?</h3><i></i>
+			</header>
+			<footer><p>
+				<b>Não</b>, não temos custódia de valores das transações. Porém fazemos integração com uma série de gateways que podem ser ativados individualmente para cada meio de pagamento. E com o teste A/B você descobre quais deles tem as melhores taxas de conversão entre seu público. <b>#vemprovega</b>
+			</p></footer>
+		</article>
+		<article>
+			<header class="magic-hover" onclick="duvidas(event)">
+				<i></i><h3>Preciso ter CNPJ?</h3><i></i>
+			</header>
+			<footer><p>
+				<b>Não</b>. Se você está começando agora e não tem ideia de quanto vai faturar, pode vender como <b>Pessoa Física</b>. Porém dependendo do gateway de pagamento que você utilizar pode haver restrições, como limites de saque e encargos tributários. 
+			</p></footer>
+		</article>
+		<article>
+			<header class="magic-hover" onclick="duvidas(event)">
+				<i></i><h3>Consigo vender planos de assinatura?</h3><i></i>
+			</header>
+			<footer><p>
+				Ainda não temos recurso de <b>recorrência de pagamentos</b> mas estamos trabalhando para ter em breve.  
+			</p></footer>
+		</article>
+		<article>
+			<header class="magic-hover" onclick="duvidas(event)">
+				<i></i><h3>O que faz o Teste A/B do Vega?</h3><i></i>
+			</header>
+			<footer>
+				<p>O exclusivo Teste A/B do Vega mede três coisas:</p>
+				<p>
+					1. <b>Aprovação de compras no cartão pelos gateways de pagamento</b><br>
+					Avalie a performance de até dez gateways simultâneamente para pagamentos no cartão. O Vega encaminha as vendas para aquele que tiver a melhor taxa de conversão.
+				</p>
+				<p>
+					2. <b>Ambientes de pagamento no PIX</b><br>
+					Oferecemos modelos customizáveis de telas de PIX. Com o Teste A/B você avalia qual deles conclui mais vendas entre o seu público.
+				</p>
+				<p>
+					3. <b>Checkouts</b><br>
+					O checkout Vega permite customizações visuais, exibição de banners e outros recursos que podem ser comparados em nível de vendas aprovadas.
+				</p>
+			</footer>
+		</article>
+	</div>
+
+
+	<div class="video_gallery">
+		<header>
+			<h2>Dicas para começar no Vega</h2>
+		</header>
+
+		<ul>
+			<li>
+				<iframe src="https://www.youtube.com/embed/PpHX5Up1_jE?si=-fiPvdHHa-Q17JWx" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				<h3><a href="https://youtu.be/PpHX5Up1_jE?si=h8WDIMJcHjimN1_Z" title="Cadastro e criação de loja" target="_blank" class="magic-hover">Cadastro e criação de loja</a></h3>
+			</li>
+			<li>
+				<iframe src="https://www.youtube.com/embed/bGjCSwodpjk?si=pFbOYpJY3V46Pp7_" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				<h3><a href="https://youtu.be/bGjCSwodpjk?si=si-6yDB4DlioyGPZ" title="Verificação da conta e gateways" target="_blank" class="magic-hover">Verificação da conta e gateways</a></h3>
+			</li>
+			<li>
+				<iframe src="https://www.youtube.com/embed/QO4EkLWaq4M?si=aeNJzVWRKVpx8yhR" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				<h3><a href="https://youtu.be/QO4EkLWaq4M?si=evF8zAoZhy8LeycG" title="Integração com Shopify" target="_blank" class="magic-hover">Integração com Shopify</a></h3>
+			</li>
+			<li>
+				<iframe src="https://www.youtube.com/embed/1Cp_wFMOzzE?si=FPwys9gq7dn4hNVf" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				<h3><a href="https://youtu.be/1Cp_wFMOzzE?si=KKgdmfxDR_CceI6V" title="Integração com WooCommerce" target="_blank" class="magic-hover">Integração com WooCommerce</a></h3>
+			</li>
+			<li>
+				<iframe src="https://www.youtube.com/embed/BPyH2yX1GIA?si=zrPyegahyrWhw-Xd" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				<h3><a href="https://youtu.be/BPyH2yX1GIA?si=xBpov9XOSKgFRM5w" title="Pixel do Facebook" target="_blank" class="magic-hover">Pixel do Facebook</a></h3>
+			</li>
+			<li>
+				<iframe src="https://www.youtube.com/embed/dxiGgGx-s7g?si=WistrH-r1t8I2vUo" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				<h3><a href="https://youtu.be/dxiGgGx-s7g?si=q921lCg4nVpiQga3" title="Adicionando o domínio" target="_blank" class="magic-hover">Adicionando o domínio</a></h3>
+			</li>
+		</ul>
+	</div>
+
+</div>
+
+

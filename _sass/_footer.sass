@@ -1,0 +1,282 @@
+.footer
+	margin: 0 1.25rem
+	padding: 10rem 0 25rem
+	box-sizing: border-box
+	position: relative
+
+	header
+		margin-bottom: 5rem
+		position: relative
+		z-index: 1
+		i
+			width: 5.5rem
+			height: 5.5rem
+			display: block
+			margin: 0 auto
+			background-color: var(--brand)
+			mask:
+				image: url("../img/icons/checkout.svg")
+				repeat: no-repeat
+				size: contain
+		strong
+			font-size: 1.75rem
+			line-height: 2.25rem
+			font-weight: 400
+			max-width: 35rem
+			display: block
+			margin: .75rem auto 0
+			text-align: center
+		a
+			color: var(--neutral_10)
+			text-decoration: underline
+			&:hover
+				opacity: .7
+
+
+	& > div
+		max-width: 100rem
+		margin: 0 auto
+		display: flex
+		gap: min(2.5vw, 2.5rem)
+		position: relative
+		z-index: 0
+
+		&::before
+			content: ''
+			width: 80rem
+			height: 80rem
+			background:
+				image: url("../img/moon.svg")
+				repeat: no-repeat
+				size: contain
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+
+
+		& > address
+			max-width: 24rem
+			position: relative
+			z-index: 1
+
+			&::before
+				content: ''
+				width: min(4.2vw, 4.2rem)
+				height: min(4.2vw, 4.2rem)
+				background:
+					image: url("../img/icons/whatsapp.svg")
+					repeat: no-repeat
+					size: contain
+				position: absolute
+				top: 1.8rem
+				right: 2rem
+				z-index: 1
+	address
+		flex: 1 1 0
+		background-color: var(--neutral_80)
+		border-radius: 3rem
+		outline: solid .25rem var(--neutral_90)
+		padding: .5rem
+		font-style: normal
+		text-align: center
+
+		& > div
+			border-radius: 2.5rem
+			padding: min(2vw, 2rem)
+			border: solid 1px var(--neutral_90)
+			background-color: var(--neutral_90)
+
+		a
+			font-size: 1rem
+			font-weight: 500
+			color: var(--neutral_10)
+			display: inline-block
+			margin: 1.5rem auto
+			border: solid .25rem var(--neutral_10)
+			padding: .25rem .75rem
+			border-radius: 3rem
+			&:hover
+				opacity: .7
+
+		i
+			width: min(10vw, 11.25rem)//11.25rem
+			height: min(10vw, 11.25rem)//11.25rem
+			display: block
+			margin: 0 auto 1.5rem
+			border: solid 1px var(--neutral_90)
+			background-size: contain
+		&:first-of-type i
+			background-image: url("../img/qr-suporte.svg")
+		&:nth-of-type(2) i
+			background-image: url("../img/qr-atendimento.svg")
+
+	strong
+		font-size: 1.5rem
+		font-weight: 500
+		line-height: 2.5rem
+		margin-bottom: .5rem
+		padding: 0 2rem
+		text-align: left
+	em
+		font-size: min(1.75vw, 1.75rem)
+		font-weight: 600
+
+	hr
+		display: inline-block
+		width: .6rem
+		border: none
+	p
+		font-size: 1.15rem
+	aside
+		flex: 1 0 0
+		display: flex
+		flex-flow: column wrap
+		gap: min(2.5vw, 2.5rem)
+		position: relative
+		z-index: 1
+		address
+			text-align: left
+			a
+				margin-bottom: 0
+		.social_container
+			flex: 1 0 0
+			background-color: var(--neutral_80)
+			border-radius: 3rem
+			padding: 0 min(2.5vw, 2.5rem)
+			display: flex
+			align-items: center
+			justify-content: space-between
+
+		ul
+			display: flex
+			gap: .75rem
+		li
+			width: min(4.2vw, 4.2rem)
+			height: min(4.2vw, 4.2rem)
+			a
+				height: 100%
+				display: block
+				background-size: contain
+				background-repeat: no-repeat
+				transition: transform .3s $ease
+				&.instagram
+					background-image: url("../img/icons/instagram.svg")
+				&.youtube
+					background-image: url("../img/icons/youtube.svg")
+				&.facebook
+					background-image: url("../img/icons/facebook.svg")
+
+				&:hover
+					transform: scale(.93)
+
+		small
+			color: var(--neutral_10)
+			text-align: right
+			font-size: min(1.5vw, 1.5rem)
+			font-weight: 600
+
+	// Back to top
+	& > a 
+		position: absolute
+		bottom: 6rem
+		left: 50%
+		border-radius: 3rem
+		border: solid .25rem var(--neutral_90)
+		background-color: var(--brand)
+		transform: translateX(-50%) rotate(-90deg)
+		z-index: 1
+		transition: transform .3s $ease
+		&:hover
+			transform: translateX(-50%) rotate(-90deg) scale(.9)
+		i
+			width: 5rem
+			height: 3rem
+			display: block
+			background: url("../img/icons/arrow.svg") no-repeat 50% 50%
+
+
+@include for-size(desk_sm)
+	.footer
+		padding: 10rem 0 30rem
+
+@include for-size(tablet_lg)
+	.footer
+		padding: 4rem 0 18rem
+		& > div
+			flex-wrap: wrap
+			&::before
+				width: 120vw
+				height: 120vw
+				transform: translate(-50%, -60%)
+			& > address
+				max-width: initial
+		address
+			flex: 1 1 0
+			max-width: initial
+			&::before
+				width: 6vw
+				height: 6vw
+			i
+				width: 18vw
+				height: 18vw
+		aside
+			flex-flow: initial
+			address
+				flex: 1 1 auto
+			.social_container
+				flex: 1 1 auto
+				justify-content: space-evenly
+				flex-flow: column nowrap
+			li
+				width: 6vw
+				height: 6vw
+			em
+				font-size: 3vw
+			small
+				font-size: 2.5vw
+				text-align: center
+				padding-bottom: .5rem
+		em
+			font-size: 4vw
+
+
+@include for-size(phone)
+	.footer
+		padding: 10rem 0 18rem
+		header
+			strong
+				font-size: 1.5rem
+				line-height: 1.75rem
+		em
+			font-size: 7vw
+		address
+			i
+				width: 32vw
+				height: 32vw
+			& > div
+				padding: 1rem
+		& > div
+			&::before
+				width: 400vw
+				height: 400vw
+			address
+				&::before
+					width: 12vw
+					height: 12vw
+
+		aside
+			flex-flow: column wrap
+			em
+				font-size: 4.5vw
+				margin-bottom: .75rem
+			li
+				width: 12vw
+				height: 12vw
+			.social
+				padding: 1rem 1.5rem
+				flex-flow: initial
+				justify-content: space-between
+			small
+				font-size: 3.5vw
+
