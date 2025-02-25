@@ -1,4 +1,5 @@
-<form class="search_container" id="search_container">
+<form class="search_container" id="search_container" method="get" action="http://www.google.com/search">
+	<input type="hidden" name="sitesearch" value="{{ site.url }}{{ site.baseurl }}" />
 	<strong>Como podemos ajudar?</strong>
 	<fieldset>
 		<input type="search" name="search" placeholder=" " required autocomplete="off" pattern="[^'\x22]+" id="search">
